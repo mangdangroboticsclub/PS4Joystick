@@ -12,9 +12,9 @@ cd $FOLDER
 
 #pygame is no longer needed!
 # sudo apt-get install -y libsdl-ttf2.0-0
-# yes | sudo pip3 install pygame
+# yes | python3 -m python3 -m pip install --break-system-packages --break-system-packages pygame
 
-yes | sudo pip3 install ds4drv
+yes | python3 -m python3 -m pip install --break-system-packages --break-system-packages ds4drv
 sudo python3 setup.py clean --all install
 
 exit
