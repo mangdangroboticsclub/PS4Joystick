@@ -1,4 +1,5 @@
 
+import shutil
 import sys
 import time
 import subprocess
@@ -79,7 +80,7 @@ class Joystick:
             raise ValueError("HID mode not supported")
             backend = HidrawBackend(Daemon.logger)
         else:
-            subprocess.run(["hciconfig", "hciX", "up"])
+            subprocess.run(["hciconfig", "hciX", "up"], check=False) if shutil.which("hciconfig") else None
             backend = BluetoothBackend(Daemon.logger)
 
         backend.setup()
